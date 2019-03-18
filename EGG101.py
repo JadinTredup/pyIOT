@@ -48,6 +48,10 @@ class ThingSpeakBroadcastGUI():
 
 
     def run(self):
+        """
+        
+        :return:
+        """
         layout = self.create_window(win_type='info')
         window = sg.Window('EGG101 Thingspeak Application - Startup', font=(self.font, 12)).Layout(layout)
         self.RUNNING = True
@@ -65,11 +69,7 @@ class ThingSpeakBroadcastGUI():
         window.Close()
         ts = ThingSpeaker(channel_no, write_key, read_key)
         layout = self.create_window(win_type='main')
-        self.main_loop(layout, ts)
-
-
-    def main_loop(self, layout, ts):
-        window = sg.Window('EGG101 Thingspeak Application - Running', font=(self.font, 12)).Layout(layout)
+        window = sg.Winfow('EGG101 Thingspeak Application - Running', font=(self.font, 12)).Layout(layout)
         ts.connect_serial_device(port_name=)
         self.RUNNING = True
 
